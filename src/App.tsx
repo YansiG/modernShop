@@ -1,35 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+import axios from 'axios'
+import ReactPaginate from 'react-paginate';
+
+import Header from "./Header/Header"
+import Footer from "./Footer/Footer";
+import Item from "./Item/Item";
+import Main from "./Item/Main";
+import "./App.css"
+
+// npm i --save 
+// TypeScript vite
+// Кастом хуки(отделение логики от интерфейса)
+// React api
+// React Roater DOM
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [items, setItems] = useState<{ id: number, thumbnail: string, title: string, description: string, price: number }[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(12);
+  const [totalItems, setTotalItems] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {//Получение товаров из api с помощью axios
+      setLoading(true);
+      try {
+        const response = await axios.get(`https://dummyjson.com/products?skip=${(currentPage - 1) * itemsPerPage}&limit=${itemsPerPage}`);
+        setItems(response.data.products);
+        setTotalItems(response.data.total);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [currentPage, itemsPerPage]);
+
+  const handlePageChange = ({ selected }: { selected: number }) => {
+    setCurrentPage(selected + 1);
+  };
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <Header />
+      <h2>Список товаров</h2>
+      <Main>
+        {loading && <p>Loading...</p>}
+        {!loading && items.map((item) => <Item key={item.id} data={item} />)}
+      </Main>
+      <ReactPaginate //Добавление пагинации с помощью react-paginate
+        pageCount={Math.ceil(totalItems / itemsPerPage)}
+        pageRangeDisplayed={5}
+        marginPagesDisplayed={2}
+        onPageChange={handlePageChange}
+        containerClassName={'pagination'}
+        activeClassName={'active'}
+      />
+      <Footer />
+
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,47 @@
+.item {
+  /* border: 1px solid gray; */
+  font-family: 'Fira Sans', sans-serif;
+  width: 400px;
+  height: 420px;
+  margin: 0 20px 30px 20px;
+}
+
+.item:hover{
+  background-color: gainsboro;
+  /* border: 1px solid gray; */
+}
+
+.imgg {
+  width: 320px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.button {
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(187, 187, 187);
+  color: black;
+  border: 2px solid gray;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: gainsboro;
+  border-color: black;
+}

@@ -1,4 +1,26 @@
+import { Button, createTheme, ThemeProvider } from '@mui/material';
 import "./Item.css"
+
+const itemColor = createTheme({
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                outlined: {
+                    color: 'black',
+                    borderColor: 'gray',
+                    '&:active':{
+                        color: 'gray',
+                        borderColor: 'gray',
+                    },
+                    '&:hover':{
+                        color: 'black',
+                        borderColor: 'black',
+                    }
+                },
+            },
+        },
+    },
+});
 
 interface ItemProps {
     data: {
@@ -22,7 +44,11 @@ function Item(props: ItemProps) {
             <p>Название - {props.data.title}</p>
             <p>Описание - {props.data.description}</p>
             <p>Цена - {props.data.price}$</p>
-            <a href="#" className="button" onClick={addToCart}>В корзину</a>
+            <ThemeProvider theme={itemColor}>
+                <Button variant="outlined" onClick={addToCart}>
+                    В корзину
+                </Button>
+            </ThemeProvider>
         </div>
     );
 }

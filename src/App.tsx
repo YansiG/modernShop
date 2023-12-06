@@ -10,6 +10,7 @@ import "./App.css"
 
 // npm i --save 
 // TypeScript vite
+
 // Кастом хуки(отделение логики от интерфейса)
 // React api
 // React Roater DOM

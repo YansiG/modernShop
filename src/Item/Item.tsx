@@ -8,11 +8,11 @@ const itemColor = createTheme({
                 outlined: {
                     color: 'black',
                     borderColor: 'gray',
-                    '&:active':{
+                    '&:active': {
                         color: 'gray',
                         borderColor: 'gray',
                     },
-                    '&:hover':{
+                    '&:hover': {
                         color: 'black',
                         borderColor: 'black',
                     }
@@ -28,7 +28,6 @@ interface ItemProps {
         title: string;
         description: string;
         price: number;
-        // Add other properties as needed
     };
 }
 

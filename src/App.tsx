@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios'
 import ReactPaginate from 'react-paginate';
 
@@ -23,7 +23,7 @@ function App() {
   const [totalItems, setTotalItems] = useState(0);
 
   useEffect(() => {
-    const fetchData = async () => {//Получение товаров из api с помощью axios
+    const fetchData = async () => {
       setLoading(true);
       try {
         const response = await axios.get(`https://dummyjson.com/products?skip=${(currentPage - 1) * itemsPerPage}&limit=${itemsPerPage}`);
@@ -52,7 +52,7 @@ function App() {
         {loading && <p>Loading...</p>}
         {!loading && items.map((item) => <Item key={item.id} data={item} />)}
       </Main>
-      <ReactPaginate //Добавление пагинации с помощью react-paginate
+      <ReactPaginate
         pageCount={Math.ceil(totalItems / itemsPerPage)}
         pageRangeDisplayed={5}
         marginPagesDisplayed={2}

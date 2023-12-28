@@ -7,6 +7,8 @@ import Footer from "./Footer/Footer";
 import Item from "./Item/Item";
 import Main from "./Item/Main";
 import "./App.css"
+import { useSelector } from 'react-redux';
+import { TState } from './Redux/store';
 
 // npm i --save 
 // TypeScript vite
@@ -18,10 +20,13 @@ import "./App.css"
 function App() {
   const [items, setItems] = useState<{ id: number, thumbnail: string, title: string, description: string, price: number }[]>([]);
   const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(useSelector((state: TState) => state.currentPage));
   const [itemsPerPage] = useState(12);
   const [totalItems, setTotalItems] = useState(0);
 
+  //const currentPages = useSelector((state: TState) => state.currentPage);
+
+  {console.log(currentPage)}
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);

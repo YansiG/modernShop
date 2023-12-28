@@ -1,6 +1,6 @@
 import { Action, AnyAction, ThunkDispatch, configureStore } from '@reduxjs/toolkit';
 
-import { rootReducer } from './rootReducer';
+import { rootReducer } from './reducer';
 
 
 // При configureStore redux-thunk и redux-dev-tools применяеются по дефолту

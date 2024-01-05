@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
+import { useSelector } from 'react-redux';
+import { TState } from './Redux/store';
 import axios from 'axios'
 import ReactPaginate from 'react-paginate';
-
+import "./App.css"
 import Header from "./Header/Header"
 import Footer from "./Footer/Footer";
 import Item from "./Item/Item";
 import Main from "./Item/Main";
-import "./App.css"
-import { useSelector } from 'react-redux';
-import { TState } from './Redux/store';
+import Post from "./Post/Post";
 
 // npm i --save 
 // TypeScript vite
@@ -55,7 +55,8 @@ function App() {
       <h2>Список товаров</h2>
       <Main>
         {loading && <p>Loading...</p>}
-        {!loading && items.map((item) => <Item key={item.id} data={item} />)}
+        <Post/>
+        {/* {!loading && items.map((item) => <Item key={item.id} data={item} />)} */}
       </Main>
       <ReactPaginate
         pageCount={Math.ceil(totalItems / itemsPerPage)}

@@ -1,6 +1,14 @@
 import "./Post.css"
 
-function Post() {
+interface PostProps {
+    data: {
+        image: string;
+        title: string;
+        description: string;
+    };
+}
+
+function Post(props: PostProps) {
     return (
         <div className="wrap">
             

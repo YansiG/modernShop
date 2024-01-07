@@ -6,14 +6,14 @@ const itemColor = createTheme({
         MuiButton: {
             styleOverrides: {
                 outlined: {
-                    color: 'black',
+                    color: 'white',
                     borderColor: 'gray',
                     '&:active': {
-                        color: 'gray',
-                        borderColor: 'gray',
+                        color: 'white',
+                        borderColor: 'black',
                     },
                     '&:hover': {
-                        color: 'black',
+                        color: 'white',
                         borderColor: 'black',
                     }
                 },

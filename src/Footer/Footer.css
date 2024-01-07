@@ -1,11 +1,11 @@
 .footer {
-    background-color: whitesmoke;
-    color: black;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: auto;
-    display: block;
-    
-  }
+  background-color: rgb(22, 27, 29);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: auto;
+  display: block;
+
+}

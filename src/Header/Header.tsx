@@ -8,8 +8,8 @@ function Header() {
       <div className="headerLeft"> {/*Лого и доп текст правой части header*/}
         <img src={logo} className="logo" />
         <div className="box">
-          <h1 style={{ margin: "0" }}>Sshop</h1>
-          <p style={{ margin: "0" }}>Лучшие товары для вас</p>
+          <h1 style={{ margin: "0" }}>modernPC</h1>
+          <p style={{ margin: "0" }}>Там, где виртуальные миры становятся реальностью</p>
         </div>
 
       </div>

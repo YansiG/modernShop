@@ -4,10 +4,12 @@
   width: 400px;
   height: 420px;
   margin: 0 20px 30px 20px;
+  padding-top: 1%;
+  border-radius: 5%;
 }
 
 .item:hover{
-  background-color: gainsboro;
+  background-color: rgb(32, 36, 39);
   /* border: 1px solid gray; */
 }
 
@@ -25,6 +27,8 @@
   align-items: center;
   text-align: center;
   padding: 20px;
+  background-color: rgb(30, 34, 37);
+  border-radius: 1%;
 }
 
 .button {
@@ -44,4 +48,8 @@
 .button:hover {
   background-color: gainsboro;
   border-color: black;
+}
+
+p{
+  color: white;
 }

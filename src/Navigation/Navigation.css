@@ -1,0 +1,28 @@
+.navigation {
+    background-color: rgb(22, 27, 29);
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.navList li {
+    margin-right: 20px;
+}
+
+.navList a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.navList a:hover {
+    color: rgb(70, 80, 80);
+}

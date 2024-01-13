@@ -9,9 +9,8 @@ import Footer from "./Footer/Footer";
 import Item from "./Item/Item";
 import Main from "./Item/Main";
 import Post from "./Post/Post";
-
-// npm i --save 
-// TypeScript vite
+import Navigation from "./Navigation/Navigation";
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // Кастом хуки(отделение логики от интерфейса)
 // React api
@@ -26,7 +25,6 @@ function App() {
 
   //const currentPages = useSelector((state: TState) => state.currentPage);
 
-  {console.log(currentPage)}
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -52,7 +50,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h2>Список товаров</h2>
+      <Router>
+        <Navigation />
+      </Router>
+
       <Main>
         {loading && <p>Loading...</p>}
         <Post />
@@ -62,7 +63,7 @@ function App() {
         <Post />
         <Post />
         <Post />
-        
+
         {/* {!loading && items.map((item) => <Item key={item.id} data={item} />)} */}
       </Main>
       <ReactPaginate

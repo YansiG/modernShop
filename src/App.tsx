@@ -55,8 +55,15 @@ function App() {
       <h2>Список товаров</h2>
       <Main>
         {loading && <p>Loading...</p>}
-        {/* <Post /> */}
-        {!loading && items.map((item) => <Item key={item.id} data={item} />)}
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        
+        {/* {!loading && items.map((item) => <Item key={item.id} data={item} />)} */}
       </Main>
       <ReactPaginate
         pageCount={Math.ceil(totalItems / itemsPerPage)}

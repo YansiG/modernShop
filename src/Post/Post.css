@@ -1,0 +1,28 @@
+.news-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.news-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.news-content {
+    flex: 1;
+}
+
+.news-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.news-description {
+    font-size: 14px;
+}
